@@ -9,10 +9,25 @@
   align-items: center;
   justify-content: center;
 }
-
+.cursor-blink {
+      display: inline-block;
+      width: 3px;
+      animation: blink 1s infinite steps(1, start);
+  }
+  /*这里设置动画blink*/
+  @keyframes blink {
+      0%, 100% {
+          background-color: #000;
+          color: #aaa;
+      }
+      50% {
+          background-color: #bbb; /* not #aaa because it's seem there is Google Chrome bug */
+          color: #000;
+      }
+  }
 </style>
 </head>
 <div class="txt">
-<strong>不要靠近罗辑, 会变得不幸.</strong>
+<strong>不要靠近罗辑, 会变得不幸.<span class="cursor-blink">&nbsp;</span></strong>
 </div>
 </html>
